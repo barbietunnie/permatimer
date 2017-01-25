@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar color="primary" transparent>
+    <ion-title>
+      <img src="assets/images/logo.png" alt="">
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="newProject()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item-sliding *ngFor="let project of projectsService.projects">
+      <ion-item>
+        <ion-spinner></ion-spinner>
+        <h6>{{ project.name }}</h6>
+      </ion-item>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>
